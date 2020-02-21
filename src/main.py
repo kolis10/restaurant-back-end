@@ -70,18 +70,6 @@ def login():
 
     return jsonify(create_jwt(identity=json['name']))
 
-@app.route('/place_order', methods=['POST'])
-def orders():
-
-    json = request.get_json()
-
-    db.session.add(Orders(
-        order = json['order'],
-        food = json['food'],
-        price = json['price']
-    ))
-    db.session.commit()
-    return jsonify(json)
 
 @app.route('/salute')
 @jwt_required
