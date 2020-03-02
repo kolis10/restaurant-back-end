@@ -31,7 +31,7 @@ def handle_invalid_usage(error):
 def sitemap():
     return generate_sitemap(app)
 
-@app.route('/customer', methods=['POST'])
+@app.route('/customer', methods=['POST','GET'])
 def customer():
 
     json = request.get_json()
